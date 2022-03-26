@@ -43,6 +43,9 @@ public class ChessMatch {
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position");
 		}
+		if (!board.piece(position).isThereAnyPossibleMove()) {
+			throw new ChessException("There is no possiblem moves for the chose piece");
+		}
 	}
 
 //converte para as coordenadas do xadres
